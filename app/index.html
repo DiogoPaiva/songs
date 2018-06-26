@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Songs by Diogo Paiva</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+</head>
+
+<body ng-app="songsWebapp">
+<ui-view></ui-view>
+<main>
+  <div id="view-container">
+    <div ng-view="" autoscroll="true">
+    </div>
+  </div>
+
+  <h1 class="title">Songs by Diogo Paiva</h1>
+
+  <song-list></song-list>
+
+</main>
+<footer>
+  <a ng-href="#">2018 - All Rights Reserved</a>
+</footer>
+</body>
+</html>

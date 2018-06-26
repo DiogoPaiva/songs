@@ -1,0 +1,16 @@
+<div class="text-left song-list">
+  <div class="font-bold">
+    <div>Song List</div>
+  </div>
+  <div class="list-body">
+    <div ng-repeat="song in $ctrl.songs">
+      <div class="list-item" ng-click="$ctrl.onClick({song: song})">
+        <div class="list-row">
+          <p class="name font-bold" ng-bind="song.title"></p>
+          <p class="description" ng-bind="song.artist"></p>
+        </div>
+        <div ng-if="$ctrl.onClick" class="arrow vcenter"></div>
+      </div>
+    </div>
+  </div>
+</div>
