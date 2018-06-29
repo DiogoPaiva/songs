@@ -30,9 +30,8 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? void 0 : {
-    app: './app/app.js',
-    //app: './app.js',
-    vendor: ['angular']
+    'app': './app/app.js',
+    'vendor': './app/vendor.module.js'
   };
 
   /**
@@ -127,7 +126,7 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/raw-loader
       // Allow loading html through js
       test: /\.html$/,
-      loader: 'raw-loader'
+      loader: 'html-loader'
     }]
   };
 
@@ -171,6 +170,11 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
+    }),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
     })
   ];
 

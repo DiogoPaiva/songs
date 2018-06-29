@@ -1,12 +1,20 @@
 export default [
-	{
-		name: 'home',
-		url: '/',
-		component: 'home'
-	},
+
 	{
 		name: 'songs',
-		url: '/songs',
-		component: 'songList'
-	}
+		url: '/',
+    params: {
+      id: null
+    },
+    component: 'songList',
+
+	},
+  {
+    name: 'song',
+    url: '/song:id',
+    params: {
+      id: null
+    },
+    component: 'songDetails',
+  }
 ];

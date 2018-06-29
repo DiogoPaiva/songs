@@ -4,7 +4,7 @@
   </div>
   <div class="list-body">
     <div ng-repeat="song in $ctrl.songs">
-      <div class="list-item" ng-click="$ctrl.onClick({song: song})">
+      <div class="list-item" ng-click="$ctrl.getSong(song.id)">
         <div class="list-row">
           <p class="name font-bold" ng-bind="song.title"></p>
           <p class="description" ng-bind="song.artist"></p>

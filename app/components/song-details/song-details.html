@@ -1,0 +1,15 @@
+<div class="text-left song-details">
+  <div class="font-bold">
+    <div>Song Details</div>
+  </div>
+
+  <div class="list-body">
+    <div class="preloader" ng-if="loadingSong"></div>
+      <div class="list-item">
+        <div class="list-row">
+          <p class="name font-bold" ng-bind="$ctrl.song.title"></p>
+          <p class="description" ng-bind="$ctrl.song.artist"></p>
+        </div>
+       </div>
+  </div>
+</div>
