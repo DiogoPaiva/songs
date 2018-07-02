@@ -1,0 +1,81 @@
+@import "variables";
+@import 'font-awesome';
+@import '~bootstrap/dist/css/bootstrap.css';
+
+*{
+  box-sizing: border-box;
+}
+
+html,body {
+  height:100%;
+}
+
+body {
+  background:#e6e5e5;
+  color: #101010;
+}
+
+a {
+  color: #03A9F4;
+  cursor: pointer;
+}
+
+main {
+  padding: 1em;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  text-align: center;
+
+  display: block;
+}
+.logo {
+  font-family: $logo-font;
+  font-size: 45px;
+  span {
+    display: block;
+    padding: 10px;
+  text-align: center;
+  };
+
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+.preloader {
+  background: url("../images/preloader.gif") no-repeat center center;
+  height: 100px;
+  width: 100%;
+}
+/* search-area */
+.search-area {
+  max-width: 560px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  .searchText {
+      float: left;
+    width: 73%;
+
+    input{
+      padding: 10px;
+      font-size: 25px;
+      border: 1px solid #525252;
+      height: auto !important;
+      border-radius: 10px;
+    }
+  }
+  .search-button {
+    float: right;
+    font-size: 24px;
+    padding: 10px 40px;
+    border-radius: 10px;
+  }
+}
+
+.highlight { font-weight: bold;}
+
+.conteudo {
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 2px 3px #333;
+}

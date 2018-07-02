@@ -1,7 +1,7 @@
 {
   "name": "songs-AngularJs",
   "version": "1.0.0",
-  "description": "",
+  "description": " A List of Music Songs - AngularJs",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
@@ -52,6 +52,8 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
     "style-loader": "^0.21.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "webpack": "^2.7.0",
     "webpack-dev-server": "^2.11.2"
   }

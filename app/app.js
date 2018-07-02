@@ -1,4 +1,4 @@
-import './style/app.css';
+import './style/main.css';
 
 // loading shared module
 import './services/core.module';

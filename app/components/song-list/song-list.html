@@ -1,16 +1,60 @@
 <div class="text-left song-list">
-  <div class="font-bold">
-    <div>Song List</div>
-  </div>
-  <div class="list-body">
-    <div ng-repeat="song in $ctrl.songs">
-      <div class="list-item" ng-click="$ctrl.getSong(song.id)">
-        <div class="list-row">
-          <p class="name font-bold" ng-bind="song.title"></p>
-          <p class="description" ng-bind="song.artist"></p>
-        </div>
-        <div ng-if="$ctrl.onClick" class="arrow vcenter"></div>
+
+
+
+  <div class="search-area">
+    <div class="font-bold text-center">
+      <div>Search your favorite music artis and find about more in this Songs List</div>
+    </div>
+    <div class="searchText">
+      <input name="searchText" class="form-control form-control-lg" type="text" ng-model="search.q" placeholder="Name, artist, etc...">
+      <div class="select-area">
+          <!--<input type="checkbox" name="typeSearch" class="typeSearch" ng-model="search.selectedType" default value="any">Title or Artist-->
+          <input type="checkbox" name="typeSearch" class="typeSearch" ng-model="search.selectedType" value="title">Only title
       </div>
+
+      <hr>
+    </div>
+    <a class="btn btn-primary mb-2 search-button" ng-click="$ctrl.searchList(search)">Search</a>
+    <div class="clearfix"></div>
+ </div>
+
+  <div class="list-body">
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">
+            <a ng-model="search.sort" ng-value="artist">Artist</a>
+            <div class="order-area">
+              <a ng-model="search.order" ng-value="asc" ng-click="$ctrl.searchList(search)"><i class="fa fa-angle-up"></i></a>
+              <a ng-model="search.order" ng-value="desc" ng-click="$ctrl.searchList(search)"><i class="fa fa-angle-down"></i></a>
+
+            </div>
+
+          </th>
+          <th scope="col">Title</th>
+          <th scope="col">Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-show="!$ctrl.songs">
+          <td colspan="4">
+            <div class="preloader"></div>
+          </td>
+        </tr>
+        <tr class="song-item" ng-repeat="song in $ctrl.songs">
+          <td ng-bind="song.id"></td>
+          <td>
+            <span>{{song.artist}}</span>
+          </td>
+          <td ng-bind="song.title"></td>
+          <td><span ng-bind="song.year"></span></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

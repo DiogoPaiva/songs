@@ -2,27 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Songs by Diogo Paiva</title>
+  <title>Songs</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:300,500,700|Shrikhand" rel="stylesheet">
   <base href="/">
 </head>
 
 <body ng-app="songsWebapp">
-
+<header>
+  <div class="header-main">
+    <div class="logo">
+      <span>Songs</span>
+    </div>
+  </div>
+</header>
 <main>
   <div id="view-container">
     <div ng-view="" autoscroll="true">
     </div>
   </div>
-
-  <h1 class="title">Songs by Diogo Paiva</h1>
-  <ui-view></ui-view>
-
-
+ <div class="conteudo">
+   <h1 class="title">A List of Songs</h1>
+   <ui-view></ui-view>
+ </div>
 </main>
 <footer>
-  <a ng-href="#">2018 - All Rights Reserved</a>
+  <span>2018 - For testing purpose</span>
 </footer>
 </body>
 </html>
