@@ -3,7 +3,8 @@ import httpService from './http.service';
 
 const coreModule = angular.module('songsCoreModule', [
   'ui.router',
-  'ngRoute'
+  'ngRoute',
+  'ngStorage'
 ]);
 
 // inject services, config, filters and re-usable code

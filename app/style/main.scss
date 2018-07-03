@@ -27,26 +27,39 @@ main {
 
   display: block;
 }
-.logo {
-  font-family: $logo-font;
-  font-size: 45px;
-  span {
-    display: block;
-    padding: 10px;
-  text-align: center;
-  };
 
+.header-main {
+  margin-bottom: 15px;
+  .logo {
+    font-family: $logo-font;
+    font-size: 45px;margin-top: 60px;
+    span {
+      display: block;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  .slogan{text-align: center; font-size: 14px;}
 }
+
 
 footer {
   text-align: center;
   font-size: 0.8em;
 }
 .preloader {
-  background: url("../images/preloader.gif") no-repeat center center;
-  height: 100px;
+  background: radial-gradient(transparent 10%, #eee 20%, transparent 50%), url("../images/preloader.gif") no-repeat center center;
+  height: 100%;
   width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  transition: all 0.3s ease-in-out;
 }
+
+
 /* search-area */
 .search-area {
   max-width: 560px;
@@ -54,8 +67,10 @@ footer {
   padding-bottom: 30px;
   .searchText {
       float: left;
-    width: 73%;
-
+      width: 73%;
+    .select-area{
+      margin-top: 10px;
+    }
     input{
       padding: 10px;
       font-size: 25px;
@@ -77,5 +92,82 @@ footer {
 .conteudo {
   width: 90%;
   margin: 0 auto;
-  box-shadow: 1px 2px 3px #333;
+}
+
+.list-body {
+  max-width: 960px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 320px;
+}
+
+
+/*Song Details*/
+.song-details {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  .detail-view-body {
+    max-width: 760px;
+    width: 90%;
+    margin: 0 auto;
+    .thumb-area {
+      float: left;
+      width: 35%;
+      max-width: 256px;
+    }
+    .detail-description {
+      float: left;
+      width: 65%;
+      .song-title {
+        text-align: left;
+        margin-left: 15px;
+      }
+      .list-row {
+        padding-left: 15px;
+        h3 {
+          font-size: 15px;
+          text-align: left;
+        }
+        .line-descr {
+          text-align: left;
+          padding-bottom: 4px;
+          margin-bottom: 4px;
+          border-bottom: 1px solid #ccc;
+          .title-label {
+            font-weight: bold;
+            display: inline-block
+          }
+          .title-value {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+.song-list {
+  h1{
+    font-size: 22px; text-align: left;
+  }
+  .order-area{
+    display: inline-block;
+    margin-left: 15px;
+  }
+  .table-results{
+    font-size: 19px;
+  }
+  .welcome-description{
+    margin-bottom: 5px;
+    color: #004784;
+  }
+  .table-responsive {
+    padding: 20px;
+    box-shadow: 0 0 41px #bfbdbd;
+  }
+
+}
+.song-item {
+  cursor: pointer;
 }

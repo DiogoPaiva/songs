@@ -21,7 +21,8 @@
     "angular-ui-router": "^1.0.18",
     "angular-route": "^1.4.0",
     "jquery": "^3.2.1",
-    "bootstrap": "^3.2.0"
+    "bootstrap": "^3.2.0",
+    "ngstorage": "^0.3.11"
   },
   "devDependencies": {
     "ajv": "^6.4.0",

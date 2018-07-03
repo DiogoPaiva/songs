@@ -57,7 +57,7 @@ export default class {
             processData: false,
             contentType: false,
             type: 'POST',
-            headers: '', //requestConfigs.headers,
+            headers: '',
             success: response => this.handleRequestResponse(response, defer),
             error: error => this.handleRequestError(error, defer)
         });
