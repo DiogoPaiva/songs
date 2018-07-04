@@ -18,15 +18,12 @@ export default class {
     //INIT APPLICATION
     if(this.$sessionStorage.search) {
 
-      //Use the Saved search on SessionStorage
+      //Get the Search object from the SessionStorage
       this.searchList(
         this.$sessionStorage.search,
         this.$sessionStorage.search._order,
         this.$sessionStorage.search._sort
       );
-
-      document.getElementById("searchText").value = this.$sessionStorage.search.q;
-
 
     } else {
 
@@ -50,19 +47,18 @@ export default class {
     if (!!search) {
 
       queryParams = {
+        'selectedType' : search.selectedType ? search.selectedType : undefined,
         'q': (!search.selectedType) ? search.q : undefined,
         'year': search.year,
         'artist': search.artist,
-        'title_like': (search.selectedType) ? search.q : undefined,
+        'title_like': (search.selectedType) ? search.q || search.title_like : undefined,
         '_sort': field ? field : undefined,
         '_order': order ? order : undefined
       };
 
+      //Store in session the search parameters
       this.$sessionStorage.search = queryParams;
     }
-
-  //  console.log(search);
-  //  console.log(queryParams);
 
     //Call TO service
     this.loaderList = true;//Preloader
@@ -70,9 +66,13 @@ export default class {
 
       //Returned Object
       this.songs = songs;
+
+      //Preloader
       this.loaderList = false;
 
+      // Total results label
       this.totalResults = songs.length;
+
 
     }).catch(e => console.error(e)
     );
@@ -85,4 +85,14 @@ export default class {
       }
   }
 
+  addFavorites(song){
+
+    //var favorite()
+
+    this.$sessionStorage.favorites = song;
+  }
+
+  // removeFavorite(song){
+  //
+  // }
 }

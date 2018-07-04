@@ -2376,7 +2376,10 @@ footer {
   right: 0;
   margin: auto;
   top: 0;
-  transition: all 0.3s ease-in-out; }
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
 
 /* search-area */
 .search-area {
@@ -2419,22 +2422,46 @@ footer {
   width: 90%;
   margin: 0 auto;
   max-width: 1200px; }
+  .song-details h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px; }
+  .song-details .song-detail-wrapper {
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative; }
+  .song-details .back-link {
+    position: absolute;
+    left: 10px;
+    top: -30px;
+    margin-bottom: 10px;
+    color: #a5a5a5; }
+    .song-details .back-link i {
+      margin-right: 5px; }
   .song-details .detail-view-body {
     max-width: 760px;
-    width: 90%;
-    margin: 0 auto; }
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 19px #c1c1c1; }
     .song-details .detail-view-body .thumb-area {
       float: left;
       width: 35%;
       max-width: 256px; }
     .song-details .detail-view-body .detail-description {
       float: left;
-      width: 65%; }
+      width: 65%;
+      margin-top: 15px; }
+      .song-details .detail-view-body .detail-description h3 {
+        font-size: 20px; }
       .song-details .detail-view-body .detail-description .song-title {
         text-align: left;
-        margin-left: 15px; }
+        margin-left: 25px;
+        margin-top: 5px; }
       .song-details .detail-view-body .detail-description .list-row {
-        padding-left: 15px; }
+        padding-left: 25px; }
         .song-details .detail-view-body .detail-description .list-row h3 {
           font-size: 15px;
           text-align: left; }
@@ -2455,16 +2482,40 @@ footer {
 .song-list .order-area {
   display: inline-block;
   margin-left: 15px; }
+  .song-list .order-area a i {
+    font-size: 18px; }
 .song-list .table-results {
-  font-size: 19px; }
+  font-size: 16px; }
+  .song-list .table-results b {
+    font-size: 19px; }
 .song-list .welcome-description {
   margin-bottom: 5px;
   color: #004784; }
 .song-list .table-responsive {
   padding: 20px;
   box-shadow: 0 0 41px #bfbdbd; }
+  .song-list .table-responsive .no-results {
+    text-align: center;
+    font-weight: bold; }
 
 .song-item {
-  cursor: pointer; }
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .song-item a {
+    color: #999;
+    text-decoration: none; }
+  .song-item .addFavorite {
+    opacity: 0;
+    color: #ccc; }
+    .song-item .addFavorite.toAdd {
+      color: pink; }
+    .song-item .addFavorite.added {
+      color: dodgerblue; }
+    .song-item .addFavorite i {
+      font-size: 22px; }
+  .song-item:hover .addFavorite {
+    opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */

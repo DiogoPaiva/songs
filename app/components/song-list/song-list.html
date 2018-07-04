@@ -6,10 +6,10 @@
 
     </div>
     <div class="searchText">
-      <input name="searchText" id="searchText" class="form-control form-control-lg" type="text" ng-model="search.q" placeholder="Name, artist, etc...">
+      <input name="searchText" id="searchText" class="form-control form-control-lg" type="text" ng-value="$ctrl.$sessionStorage.search.q || $ctrl.$sessionStorage.search.title_like " ng-model="search.q" placeholder="Name, artist, etc...">
       <div class="select-area">
         <div class="checkbox">
-          <label><input type="checkbox" name="typeSearch" class="typeSearch" ng-model="search.selectedType" value="title">Search only on Title song's </label>
+          <label><input type="checkbox" name="typeSearch" class="typeSearch" ng-model="search.selectedType" ng-checked="$ctrl.$sessionStorage.search.selectedType" value="title">Search only on Title song's </label>
         </div>
       </div>
       <hr>
@@ -17,8 +17,7 @@
     <a class="btn btn-primary mb-2 search-button" ng-click="$ctrl.searchList(search)">Search</a>
     <div class="clearfix"></div>
     <div class="table-results text-center" ng-if="$ctrl.songs">
-      <span>Showing results for {{$ctrl.storedSearch.q}}</span>
-      <span>Total of <b> {{$ctrl.totalResults}}</b> results.</span>
+      <span>Showing <b> {{$ctrl.totalResults}}</b> results for keyword <b>{{$ctrl.$sessionStorage.search.q || $ctrl.$sessionStorage.search.title_like}}</b></span>
     </div>
  </div>
 
@@ -26,7 +25,10 @@
     <h1 class="title">See our list</h1>
     <div class="table-responsive">
       <div ng-show="$ctrl.loaderList" class="preloader"></div>
-      <table class="table table-striped table-hover">
+      <div class="no-results" ng-show="$ctrl.totalResults === 0">
+        <span>There are no results for your search criteria. Please try again using a different criteria.</span>
+      </div>
+      <table class="table table-striped table-hover" ng-show="$ctrl.totalResults > 0">
         <thead>
         <tr>
           <th scope="col">
@@ -51,12 +53,22 @@
         </tr>
         </thead>
         <tbody>
-        <tr class="song-item" ng-repeat="song in $ctrl.songs" ng-click="$ctrl.viewDetails(song.id)">
+        <tr class="song-item" ng-repeat="song in $ctrl.songs">
           <td>
-            <span>{{song.artist}}</span>
+            <i class="fa fa-search"></i>
+            <a ng-click="$ctrl.viewDetails(song.id)">{{song.artist}}</a>
           </td>
-          <td ng-bind="song.title"></td>
-          <td><span ng-bind="song.year"></span></td>
+          <td>
+            <a ng-click="$ctrl.viewDetails(song.id)">{{song.title}}</a>
+          </td>
+          <td>
+            <span>{{song.year}}</span>
+          </td>
+          <td>
+            <a ng-click="addFavorites(song)" class="addFavorite toAdd">
+              <i class="fa fa-heart"></i>
+            </a>
+          </td>
         </tr>
         </tbody>
       </table>

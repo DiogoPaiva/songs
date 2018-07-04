@@ -25,9 +25,10 @@ export default class {
 
   };
 
-
+  /*
+  *  @return 'song' object
+  * */
   getSong(id){
-
 
     //Preloader
     this.loadingSong =  true;
@@ -37,14 +38,10 @@ export default class {
 
       this.song = song;
     }).catch(e => console.error(e));
-
   }
 
+  // Navigate to the previous page
   backToList() {
-
-    //let searchParams = angular.fromJson(this.$sessionStorage.search);
-
-    //this.$location.path('/');
     this.$window.history.back();
   }
 

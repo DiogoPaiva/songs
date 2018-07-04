@@ -9,7 +9,7 @@ import './app.components';
 const appModule = angular.module('songsWebapp', [
   'songsCoreModule',
   'songList',
-  'songDetails'
+  'songDetails',
 ]);
 
 

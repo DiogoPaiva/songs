@@ -13,8 +13,18 @@ export default class {
     if(!!search) {
     const defer = this.$q.defer();
 
+    let queryParams = {
+      'q': search.q,
+      'year': search.year,
+      'artist': search.artist,
+      'title_like': search.title_like,
+      '_sort': search._sort,
+      '_order': search._order
+    };
+
+
       var $this = this;
-      this.httpService.get('/songs', search).then(response => {
+      this.httpService.get('/songs', queryParams).then(response => {
 
         if (response) {
           const data = response;

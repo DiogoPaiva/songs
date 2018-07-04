@@ -1,41 +1,42 @@
 <div class="song-details">
-<a class="back-link" ng-click="$ctrl.backToList()">Back</a>
-  <h1 class="font-bold">Song Details</h1>
-  <div class="detail-view-body">
-    <div class="preloader" ng-if="loadingSong"></div>
 
+  <h1 class="font-bold">Song Details</h1>
+
+
+  <div class="song-detail-wrapper">
+    <a class="back-link" ng-click="$ctrl.backToList()">
+      <i class="fa fa-chevron-left"></i>
+      Back</a>
+    <div style="clear: both;"></div>
+    <div class="detail-view-body">
+      <div class="preloader" ng-if="loadingSong"></div>
       <div class="thumb-area">
         <img ng-src="{{$ctrl.song.imgUrl}}" />
       </div>
-
       <div class="detail-description">
         <h3 class="song-title">{{$ctrl.song.artist}} - {{$ctrl.song.title}}</h3>
         <div class="list-row">
-          <h3>Details:</h3>
+          <h3></h3>
           <div class="line-descr">
-            <span class="title-label">Artist</span>
+            <span class="title-label">Artist: </span>
             <span class="title-value">{{$ctrl.song.artist}}</span>
           </div>
-
           <div class="line-descr">
-            <span class="title-label">Title</span>
+            <span class="title-label">Title: </span>
             <span class="title-value">{{$ctrl.song.title}}</span>
           </div>
-
           <div class="line-descr">
-            <span class="title-label">Year</span>
+            <span class="title-label">Year: </span>
             <span class="title-value">{{$ctrl.song.year}}</span>
           </div>
-
           <div class="line-descr">
-            <span class="title-label">External Link</span>
+            <span class="title-label">External Link: </span>
             <span class="title-value">{{$ctrl.song.webUrl}}</span>
           </div>
-
         </div>
-       </div>
-    <div style="clear: both;"></div>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
   </div>
-
 
 </div>
