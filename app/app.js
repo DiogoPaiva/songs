@@ -10,6 +10,7 @@ const appModule = angular.module('songsWebapp', [
   'songsCoreModule',
   'songList',
   'songDetails',
+  'app.favorites'
 ]);
 
 

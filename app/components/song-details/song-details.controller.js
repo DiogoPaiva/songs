@@ -1,7 +1,7 @@
 
 export default class {
 
-  constructor($log, $q, SongDetailsService, $location, $sessionStorage, $window) {
+  constructor($log, $q, SongDetailsService, $location, $sessionStorage, $localStorage, $window) {
     'ngInject';
 
     this.$log = $log;
@@ -9,6 +9,7 @@ export default class {
     this.songDetailsService = SongDetailsService;
     this.$location = $location;
     this.$sessionStorage = $sessionStorage;
+    this.$localStorage = $localStorage;
     this.$window = $window;
   }
 

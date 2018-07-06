@@ -1,6 +1,6 @@
 import favoritesComponent from './favorites.component';
 
-const favoritesModule = angular.module('favorites', []);
+const favoritesModule = angular.module('app.favorites', []);
 
 
 // loading components, services specific to this module.

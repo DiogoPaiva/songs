@@ -1,7 +1,7 @@
 
 export default class {
 
-  constructor($log, $q, SongListService, $location, $sessionStorage, $window ) {
+  constructor($log, $q, SongListService, $location, $sessionStorage,$localStorage, $window ) {
     'ngInject';
 
     this.$log = $log;
@@ -9,6 +9,7 @@ export default class {
     this.$location = $location;
     this.songListService = SongListService;
     this.$sessionStorage = $sessionStorage;
+    this.$localStorage = $localStorage;
     this.$window = $window;
 
   }
@@ -47,7 +48,7 @@ export default class {
     if (!!search) {
 
       queryParams = {
-        'selectedType' : search.selectedType ? search.selectedType : undefined,
+        'selectedType': search.selectedType ? search.selectedType : undefined,
         'q': (!search.selectedType) ? search.q : undefined,
         'year': search.year,
         'artist': search.artist,
@@ -85,14 +86,4 @@ export default class {
       }
   }
 
-  addFavorites(song){
-
-    //var favorite()
-
-    this.$sessionStorage.favorites = song;
-  }
-
-  // removeFavorite(song){
-  //
-  // }
 }

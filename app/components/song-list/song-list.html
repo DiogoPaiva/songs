@@ -64,8 +64,8 @@
           <td>
             <span>{{song.year}}</span>
           </td>
-          <td>
-            <a ng-click="addFavorites(song)" class="addFavorite toAdd">
+          <td ng-controller="favoritesController as favorites">
+            <a ng-click="favorites.addFavorites(song)" class="addFavorite" ng-class="{added: favorites.isFavorite(song)}">
               <i class="fa fa-heart"></i>
             </a>
           </td>

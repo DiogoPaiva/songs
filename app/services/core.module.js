@@ -1,5 +1,6 @@
 import routerHelperService from './router-helper/router-helper.service';
 import httpService from './http.service';
+import favoritesController from "../components/favorites/favorites.controller";
 
 const coreModule = angular.module('songsCoreModule', [
   'ui.router',
@@ -11,6 +12,8 @@ const coreModule = angular.module('songsCoreModule', [
 // which can be shared via all modules
 coreModule.config(routerHelperService);
 coreModule.service('httpService', httpService);
+coreModule.controller('favoritesController', favoritesController);
+
 
 coreModule.constant('configs', {
     appVersion:'1.0.0',

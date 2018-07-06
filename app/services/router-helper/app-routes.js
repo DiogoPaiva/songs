@@ -13,6 +13,11 @@ export default [
       id: null
     },
     component: 'songDetails',
-  }
+  },
+  {
+    name: 'favorites',
+    url: '/favorites',
+    component: 'favorites',
 
+  },
 ];

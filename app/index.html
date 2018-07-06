@@ -12,7 +12,10 @@
 <body ng-app="songsWebapp">
 <header>
   <div class="header-main">
-
+    <div class="favorite-link" ng-click="favorites.showFavorites()" ng-controller="favoritesController as favorites">
+      <i class="fa fa-heart-o"></i>
+      <span class="rounded-count">{{favorites.favoriteCount}}</span>
+    </div>
     <div class="logo">
       <span>Songs</span>
     </div>

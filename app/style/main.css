@@ -2354,7 +2354,7 @@ main {
   .header-main .logo {
     font-family: "Shrikhand", cursive;
     font-size: 45px;
-    margin-top: 60px; }
+    padding-top: 60px; }
     .header-main .logo span {
       display: block;
       padding: 10px;
@@ -2509,13 +2509,66 @@ footer {
   .song-item .addFavorite {
     opacity: 0;
     color: #ccc; }
-    .song-item .addFavorite.toAdd {
-      color: pink; }
     .song-item .addFavorite.added {
-      color: dodgerblue; }
+      color: dodgerblue;
+      opacity: 1 !important; }
     .song-item .addFavorite i {
       font-size: 22px; }
   .song-item:hover .addFavorite {
     opacity: 1; }
+
+.favorite-list .song-detail-wrapper {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid #c5c5c5;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 11px #bfbebe; }
+  .favorite-list .song-detail-wrapper .thumb-area {
+    float: left;
+    width: 75px;
+    height: 75px;
+    overflow: hidden; }
+    .favorite-list .song-detail-wrapper .thumb-area img {
+      width: 100%;
+      height: auto; }
+  .favorite-list .song-detail-wrapper .description-area {
+    float: left;
+    padding-left: 15px;
+    padding-top: 15px;
+    text-align: left; }
+  .favorite-list .song-detail-wrapper .button-area {
+    float: right;
+    font-weight: normal;
+    font-size: 12px; }
+
+.header-main {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative; }
+  .header-main .favorite-link {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    cursor: pointer;
+    display: block;
+    z-index: 12; }
+    .header-main .favorite-link i {
+      font-size: 30px; }
+    .header-main .favorite-link .rounded-count {
+      background-color: #004784;
+      height: 20px;
+      width: 20px;
+      color: #fff;
+      text-align: center;
+      display: block;
+      position: absolute;
+      right: -19px;
+      top: -7px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%; }
 
 /*# sourceMappingURL=main.css.map */
